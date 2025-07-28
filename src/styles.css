@@ -54,8 +54,12 @@ header {
 }
 
 .sidebar {
-  background-color: black;
+  background-color: green;
   width: 25vw;
+}
+
+.sidebar > button {
+  margin: 5px 0 0 5px;
 }
 
 .display {
