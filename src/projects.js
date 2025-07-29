@@ -1,4 +1,4 @@
-import { renderProject, validateProjectName } from "./LeftPanelDOM";
+import { renderProjectAdd, validateProjectName } from "./LeftPanelDOM";
 
 const allProjects = [];
 
@@ -9,13 +9,17 @@ function createProject(title) {
 
 const modifyProject = {
     deleteProject(projectName) {
-
+        for (let i = 0; i < allProjects.length; i++) {
+            if (allProjects[i].title == projectName) {
+                allProjects.splice(i, 1);
+                break;
+            } 
+        }
     },
 
     addProject(projectName) {
-
         if (validateProjectName(projectName)) {
-            renderProject(projectName);
+            renderProjectAdd(projectName);
             const projectObject = new createProject(projectName);
             allProjects.push(projectObject);
         }

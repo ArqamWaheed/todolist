@@ -1,12 +1,13 @@
 const $leftSidePanel = document.querySelector(".sidebar");
 
-function renderProject(projectName) {
+function renderProjectAdd(projectName) {
     const div = document.createElement("div");
     div.classList.add(`${projectName}`, "projectDiv");
     const divText = document.createElement("p");
     divText.textContent = `${projectName}`;
     const divButton = document.createElement("button");
     divButton.textContent = "❌";
+    divButton.classList.add("deleteProjectBtn");
     $leftSidePanel.appendChild(div);
     div.appendChild(divText);
     div.appendChild(divButton);
@@ -24,4 +25,4 @@ function validateProjectName(name) { // Validating through className, which is t
 }
 
 
-export {renderProject, $leftSidePanel, validateProjectName};
+export {renderProjectAdd, $leftSidePanel, validateProjectName};
