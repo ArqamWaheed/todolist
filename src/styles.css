@@ -46,27 +46,53 @@ header {
   margin: 2.5vh 0 0 0;
   padding-bottom: 2.5vh;
   border-bottom: 5px solid black;
+  color: var(--heading);
+}
+
+
+.sidebar {
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 2vw 0 2vw;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 25vw;
+}
+
+:root {
+  --purpledark: oklch(49.6% 0.265 301.924);
+  --purplelight: oklch(55.8% 0.288 302.321);
+  --green: oklch(72.3% 0.219 149.579);
+  --red: #e53e3e;
+  --heading: #2d3748;
+  --text: #4a5568;
 }
 
 .main {
   display: flex;
   flex: 1;
+  padding: 25px;
+  gap: 25px;
+  background-image: linear-gradient(to right, var(--purpledark), var(--purplelight));
 }
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
-  background-color: green;
-  width: 25vw;
-}
-
 
 
 .display {
-  background: grey;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.95);
   width: 75vw;
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.6vw + 0.6vh);
+  justify-content: center;
+  align-items: center;
+  font-size: calc(0.7vw + 0.7vh);
+  color: var(--heading);
+}
+
+.display h2 {
+  color: var(--text);
 }
 
 .projectDiv {
@@ -78,6 +104,64 @@ header {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
+}
+
+.projectCreationDiv {
+  flex-shrink: 1;
+  width: 100%; /* Inherit sidebar’s width */
+  max-width: 100%; /* Prevent overflow */
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.parentCreationDiv {
+  width: 100%; /* Inherit sidebar’s width */
+  max-width: 100%; /* Prevent overflow */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  color: var(--heading);
+}
+
+.projectCreationDiv input {
+  padding: 5px;
+  flex-shrink: 1;
+  text-align: center;
+  flex: 1;
+}
+
+.projectCreationDiv button {
+  font-size: 2rem;
+  padding: 0 0.2vw;
+  flex-shrink: 0;
+  flex-basis: 40px;
+}
+
+.projectCreationDiv input, .projectCreationDiv button {
+  min-width: 0;
+  height: calc(30px + 2vh);
+  border-radius: 10px;
+}
+
+
+.projectHome {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  border-radius: 25px;
+  padding: 10px 0 10px 0;
+  margin-top: 40px;
+  color: rgba(255, 255, 255, 1);
+  background-color: var(--green);
+  font-size: 1rem;
+  height: calc(50px + 2vh);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .projectDiv button {
