@@ -1,4 +1,6 @@
 const $leftSidePanel = document.querySelector(".sidebar");
+const $yourProjects = $leftSidePanel.querySelector(".yourProjects");
+const $projectInputField = $leftSidePanel.querySelector("input");
 
 function renderProjectAdd(projectName) {
     const div = document.createElement("div");
@@ -6,15 +8,24 @@ function renderProjectAdd(projectName) {
     const divText = document.createElement("p");
     divText.textContent = `${projectName}`;
     const divButton = document.createElement("button");
-    divButton.textContent = "❌";
+    divButton.textContent = "X";
     divButton.classList.add("deleteProjectBtn");
-    $leftSidePanel.appendChild(div);
+    $yourProjects.appendChild(div);
     div.appendChild(divText);
     div.appendChild(divButton);
 }
 
+const projectInput = {
+    getInputName() {
+        return $projectInputField.value;
+    },
+    clearInput() {
+        $projectInputField.value = "";
+    }
+}
+
 function validateProjectName(name) { // Validating through className, which is the same as the projectName ; pinpoint any collision of class name
-    const Divs = $leftSidePanel.querySelectorAll("div");
+    const Divs = $yourProjects.querySelectorAll("div");
     for (const div of Divs) {
         if (div.classList.contains(name)) {
             alert("Error, projects cannot have the same name!");
@@ -25,4 +36,4 @@ function validateProjectName(name) { // Validating through className, which is t
 }
 
 
-export {renderProjectAdd, $leftSidePanel, validateProjectName};
+export {renderProjectAdd, $leftSidePanel, validateProjectName, projectInput};

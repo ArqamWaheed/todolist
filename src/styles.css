@@ -61,12 +61,14 @@ header {
 }
 
 :root {
-  --purpledark: oklch(49.6% 0.265 301.924);
-  --purplelight: oklch(55.8% 0.288 302.321);
+  --purpledark: #764ba2;
+  --purplelight: #667eea;
   --green: oklch(72.3% 0.219 149.579);
   --red: #e53e3e;
   --heading: #2d3748;
   --text: #4a5568;
+  --maintext: oklch(14.1% 0.005 285.823);
+  --lightgrey: #e2e8f0;
 }
 
 .main {
@@ -74,7 +76,7 @@ header {
   flex: 1;
   padding: 25px;
   gap: 25px;
-  background-image: linear-gradient(to right, var(--purpledark), var(--purplelight));
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 
@@ -95,16 +97,6 @@ header {
   color: var(--text);
 }
 
-.projectDiv {
-  width: 100%;
-  background-color: white;
-  border: 3px solid black;
-  border-radius: 25px;
-  padding: 10px 0 10px 0;
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-}
 
 .projectCreationDiv {
   flex-shrink: 1;
@@ -118,7 +110,9 @@ header {
   color: var(--text);
 }
 
-.parentCreationDiv {
+
+
+.parentCreationDiv, .yourProjects {
   width: 100%; /* Inherit sidebar’s width */
   max-width: 100%; /* Prevent overflow */
   display: flex;
@@ -140,7 +134,10 @@ header {
   padding: 0 0.2vw;
   flex-shrink: 0;
   flex-basis: 40px;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, #667eea, #764ba2);
 }
+
 
 .projectCreationDiv input, .projectCreationDiv button {
   min-width: 0;
@@ -162,10 +159,38 @@ header {
   height: calc(50px + 2vh);
   overflow: hidden;
   white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.projectHome:hover {
+  transform: translate(2px, -2px);
+}
+
+
+.projectDiv {
+  width: 100%;
+  background-color: white;
+  border: 3px solid var(--lightgrey);
+  border-radius: 15px;
+  padding: 10px 0 10px 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: var(--maintext);
+  transition: border 0.3s ease;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.projectDiv:hover {
+  border: 3px solid var(--purpledark);
+  transform: translate(2px, -2px);
 }
 
 .projectDiv button {
-  margin-right: 5vw;
+  margin-right: 1vw;
   flex-shrink: 0;
 }
 
@@ -174,6 +199,6 @@ header {
   white-space: nowrap;
   flex-shrink: 1;
   overflow: none;
-  margin-left: 5vw;
+  margin-left: 2vw;
 }
 

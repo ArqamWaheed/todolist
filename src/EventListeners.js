@@ -1,12 +1,10 @@
-import { $leftSidePanel } from "./LeftPanelDOM";
+import { $leftSidePanel, projectInput } from "./LeftPanelDOM";
 import { modifyProject } from "./projects";
 
 const $createProjBtn = $leftSidePanel.querySelector(".createProjectButton");
 
-
 $createProjBtn.addEventListener('click', function() {
-    const $projectNameInput = $leftSidePanel.querySelector("input");
-    modifyProject.addProject($projectNameInput.value);
+    modifyProject.addProject(projectInput.getInputName());
 });
 
 $leftSidePanel.addEventListener('click', function(e) { 

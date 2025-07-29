@@ -1,4 +1,4 @@
-import { renderProjectAdd, validateProjectName } from "./LeftPanelDOM";
+import { projectInput, renderProjectAdd, validateProjectName } from "./LeftPanelDOM";
 
 const allProjects = [];
 
@@ -22,6 +22,7 @@ const modifyProject = {
             renderProjectAdd(projectName);
             const projectObject = new createProject(projectName);
             allProjects.push(projectObject);
+            projectInput.clearInput();
         }
     }
 }
