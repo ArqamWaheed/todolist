@@ -1,3 +1,5 @@
+import { renderProject, validateProjectName } from "./LeftPanelDOM";
+
 const allProjects = [];
 
 function createProject(title) {
@@ -5,4 +7,19 @@ function createProject(title) {
     this.ids = [];
 }
 
-export {createProject, allProjects}; 
+const modifyProject = {
+    deleteProject(projectName) {
+
+    },
+
+    addProject(projectName) {
+
+        if (validateProjectName(projectName)) {
+            renderProject(projectName);
+            const projectObject = new createProject(projectName);
+            allProjects.push(projectObject);
+        }
+    }
+}
+
+export {createProject, allProjects, modifyProject}; 
