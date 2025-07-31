@@ -21,7 +21,7 @@
                 </div>
                 <h2>Create New Task</h2>
                 <div class="todoCreationDiv">
-                    <input type="text" name="todoName" id="todoName" placeholder= "Enter your todo name..." autocomplete="off">
+                    <input type="text" name="todoName" id="todoName" placeholder= "Enter your task..." autocomplete="off">
                     <button class="createTaskButton">+</button>
                 </div>
             </div>
@@ -43,7 +43,25 @@
         <div id="todoModal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
-              <input type="text" name="todoName" id="" class="modalInput" autocomplete="off">
+              <input type="text" name="todoName" id="" class="modalInputTask" autocomplete="off" placeholder="What task do you wanna do?">
+              <input type="text" class="modalInputDesc" placeholder="Description" autocomplete="off">
+              <div class="dueDateDiv">
+                <label for="dueDate" class="dueDate">Due date</label>
+                <input type="date" id="dueDate">
+              </div>
+              <hr>
+              <div class="todoFooterDiv">
+                <div class="selectproject">
+                    <label for="projectSelect" class="projectselectlabel">Project:</label>
+                    <select name="projects" id="projectselect">
+                        <option value="Yo gurt">yo gurt</option>
+                        <option value="Yo gurt">yo gurt</option>
+                        <option value="Yo gurt">yo gurt</option>
+                        <option value="Yo gurt">yo gurt</option>
+                    </select>
+                </div>
+                <button>AddTodo</button>
+              </div>
             </div>
         </div>
     </div>

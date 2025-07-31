@@ -218,11 +218,12 @@ header {
 
 /* Modal Content/Box */
 .modal-content {
+  border-radius: 25px;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -240,7 +241,8 @@ header {
   cursor: pointer;
 }
 
-.modalInput {
+.modalInputTask {
+  color: var(--heading);
   border: none;
   border-bottom: 0.3vh solid var(--lightgrey);
   font-weight: 700;
@@ -248,10 +250,64 @@ header {
   width: 75%;
 }
 
-.modalInput:focus {
+.modalInputDesc {
+  color: var(--text);
+  border: none;
+  margin-top: calc(5px + 1vh);
+  width: 90%;
+}
+
+.modalInputTask:focus, .modalInputDesc:focus {
   outline: none;     /* Removes the default blue outline */
 }
 
 button:active {
   transform: scale(0.97); /* Press effect */
+}
+
+.dueDateDiv {
+  margin: calc(5px + 2vh) 0;
+  display: flex;
+  align-content: center;
+
+}
+
+#dueDate {
+  color: var(--text);
+  border: 3px solid var(--lightgrey);
+  margin-left: 5px;
+  text-align: center;
+}
+
+label.dueDate {
+  color: var(--heading);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.todoFooterDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: calc(5px + 2vh);
+}
+
+.projectselectlabel {
+  color: var(--heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.selectproject {
+  display: flex;
+  gap: 5px;
+}
+
+#projectselect {
+  border: none;
+  background: white;
+}
+
+#projectselect:focus {
+  outline: none;
+  border: none;
 }
