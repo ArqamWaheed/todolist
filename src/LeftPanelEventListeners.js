@@ -1,7 +1,15 @@
-import { $leftSidePanel, projectInput } from "./LeftPanelDOM";
+import { $leftSidePanel, projectInput, taskInput } from "./LeftPanelDOM";
+import { modifyTodoModal } from "./Modal";
 import { modifyProject } from "./projects";
 
 const $createProjBtn = $leftSidePanel.querySelector(".createProjectButton");
+const $createTaskBtn = $leftSidePanel.querySelector(".createTaskButton");
+
+$createTaskBtn.addEventListener('click', function() {
+    modifyTodoModal.openModal();
+    modifyTodoModal.setInput();
+    taskInput.clearInput();
+})
 
 $createProjBtn.addEventListener('click', function() {
     modifyProject.addProject(projectInput.getInputName());

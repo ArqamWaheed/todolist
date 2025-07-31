@@ -16,13 +16,13 @@
             <div class="parentCreationDiv">
                 <h2>Create New Project</h2>
                 <div class="projectCreationDiv">
-                    <input type="text" name="project" id="project" placeholder= "Enter your project name...">
+                    <input type="text" name="project" id="project" placeholder= "Enter your project name..." autocomplete="off">
                     <button class="createProjectButton">+</button>
                 </div>
                 <h2>Create New Task</h2>
                 <div class="todoCreationDiv">
-                    <input type="text" name="todoName" id="todoName" placeholder= "Enter your todo name...">
-                    <button class="createProjectButton">+</button>
+                    <input type="text" name="todoName" id="todoName" placeholder= "Enter your todo name..." autocomplete="off">
+                    <button class="createTaskButton">+</button>
                 </div>
             </div>
 
@@ -40,10 +40,10 @@
             </div>
         </div>
 
-        <div id="myModal" class="modal">
+        <div id="todoModal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
-              <input type="text" name="todoName" id="todoName" class="modalInput">
+              <input type="text" name="todoName" id="" class="modalInput" autocomplete="off">
             </div>
         </div>
     </div>
