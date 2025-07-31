@@ -1,8 +1,7 @@
 import "./styles.css";
-import "./EventListeners.js";
+import "./LeftPanelEventListeners.js";
 import { modifyDisplay} from "./RightPanelDOM.js";
 
-modifyDisplay.renderHomePage();
 function createTodo(title, description, dueDate, priority) {
     this.title = (typeof title === "string") ? title : null;
     this.description = (typeof description === "string") ? description : null;

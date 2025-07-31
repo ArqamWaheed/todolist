@@ -10,6 +10,10 @@ const modifyDisplay = {
         $rightSidePanel.appendChild($h2);
     }, 
 
+    renderProject() {
+        
+    },
+
     clearDisplay() {
         $rightSidePanel.replaceChildren();
     },
