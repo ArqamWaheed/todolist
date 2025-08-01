@@ -3,7 +3,6 @@ import { modifyDisplay} from "./RightPanelDOM.js";
 import "./LeftPanelEventListeners.js";
 import "./ModalEventListeners.js";
 
-modifyDisplay.renderHomePage();
 function createTodo(title, description, dueDate, priority) {
     this.title = (typeof title === "string") ? title : null;
     this.description = (typeof description === "string") ? description : null;

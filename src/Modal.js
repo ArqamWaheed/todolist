@@ -20,6 +20,13 @@ const modifyTodoModal = {
         $option.style.value = projectName;
         $option.textContent = projectName;
         $projectDropdown.appendChild($option);
+    },
+    deleteFromDropdown(projectName) {
+        for (const child of $projectDropdown.children) {
+            if (child.textContent == projectName) {
+                $projectDropdown.removeChild(child);
+            }
+        }
     }
 }
 

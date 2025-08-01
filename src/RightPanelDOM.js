@@ -10,7 +10,7 @@ const modifyDisplay = {
         $rightSidePanel.appendChild($h2);
     }, 
 
-    renderProject() {
+    renderProject(projectName) {
         
     },
 

@@ -266,7 +266,7 @@ button:active {
 }
 
 .dueDateDiv {
-  margin: calc(5px + 2vh) 0;
+  margin: calc(5px + 4vh) 0;
   display: flex;
   align-content: center;
 
@@ -300,6 +300,7 @@ label.dueDate {
 .selectproject {
   display: flex;
   gap: 5px;
+  border: 3px solid var(--lightgrey);
 }
 
 #projectselect {
@@ -310,4 +311,14 @@ label.dueDate {
 #projectselect:focus {
   outline: none;
   border: none;
+}
+
+.displayProjectDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: calc(15px + 1vh + 1vw);
+  width: 70%;
+  height: 100%;
+  background: var(--lightgrey);
 }
