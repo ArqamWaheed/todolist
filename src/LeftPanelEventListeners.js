@@ -1,14 +1,20 @@
 import { $leftSidePanel, projectInput, taskInput } from "./LeftPanelDOM";
 import { modifyTodoModal } from "./Modal";
-import { modifyProject } from "./projects";
+import { checkProjectExistance, modifyProject } from "./projects";
 
 const $createProjBtn = $leftSidePanel.querySelector(".createProjectButton");
 const $createTaskBtn = $leftSidePanel.querySelector(".createTaskButton");
 
 $createTaskBtn.addEventListener('click', function() {
-    modifyTodoModal.openModal();
-    modifyTodoModal.setInput();
-    taskInput.clearInput();
+    console.log(checkProjectExistance());
+    if (checkProjectExistance()) {
+        modifyTodoModal.openModal();
+        modifyTodoModal.setInput();
+        taskInput.clearInput();
+    } else {
+        alert("Must create a project first!");
+        taskInput.clearInput();
+    }
 })
 
 $createProjBtn.addEventListener('click', function() {

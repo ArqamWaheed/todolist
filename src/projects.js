@@ -1,4 +1,5 @@
 import { projectInput, renderProjectAdd, validateProjectName } from "./LeftPanelDOM";
+import { $projectDropdown, modifyTodoModal } from "./Modal";
 
 const allProjects = [];
 
@@ -23,8 +24,13 @@ const modifyProject = {
             const projectObject = new createProject(projectName);
             allProjects.push(projectObject);
             projectInput.clearInput();
+            modifyTodoModal.addToDropdown(projectName);
         }
     }
 }
 
-export {createProject, allProjects, modifyProject}; 
+function checkProjectExistance() {
+    return !!($projectDropdown.children.length);
+}
+
+export {createProject, allProjects, modifyProject, checkProjectExistance}; 

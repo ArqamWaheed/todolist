@@ -3,6 +3,7 @@ const $yourProjects = $leftSidePanel.querySelector(".yourProjects");
 const $projectInputField = $leftSidePanel.querySelector("#project");
 const $taskInputField = $leftSidePanel.querySelector("#todoName");
 
+
 function renderProjectAdd(projectName) {
     const div = document.createElement("div");
     div.classList.add(`${projectName}`, "projectDiv");
