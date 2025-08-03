@@ -1,5 +1,6 @@
 import { projectInput, renderProjectAdd, validateProjectName } from "./LeftPanelDOM";
 import { $projectDropdown, modifyTodoModal } from "./Modal";
+import { modifyDisplay } from "./RightPanelDOM";
 
 const allProjects = [];
 
@@ -25,6 +26,8 @@ const modifyProject = {
             allProjects.push(projectObject);
             projectInput.clearInput();
             modifyTodoModal.addToDropdown(projectName);
+            modifyDisplay.clearDisplay();
+            modifyDisplay.renderProject(projectName);
         }
     }
 }
