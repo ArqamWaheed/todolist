@@ -11,6 +11,9 @@ const modifyTodoModal = {
     closeModal() {
         $todoModal.style.display = "none";
     },
+    resetModal() {
+
+    },
     setInput() {
         const $modalInput = $todoModal.querySelector("input");
         $modalInput.value = taskInput.getInputName();

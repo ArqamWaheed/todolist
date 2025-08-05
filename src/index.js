@@ -2,6 +2,7 @@ import "./styles.css";
 import { modifyDisplay} from "./RightPanelDOM.js";
 import "./LeftPanelEventListeners.js";
 import "./ModalEventListeners.js";
+import { modifyTodoModal } from "./Modal.js";
 
 const allTodos = [];
 
@@ -14,3 +15,10 @@ function createTodo(title, description, dueDate, priority) {
 }
 
 
+const modifyTodo = {
+    addTodo(TodoName, TodoDesc, dueDate, priority) {
+        const todoObj = createTodo(TodoName, TodoDesc, dueDate, priority);
+        allTodos.push(todoObj);
+        modifyTodoModal.closeModal();
+    }
+}
