@@ -11,12 +11,8 @@ function createProject(title) {
 
 const modifyProject = {
     deleteProject(projectName) {
-        for (let i = 0; i < allProjects.length; i++) {
-            if (allProjects[i].title == projectName) {
-                allProjects.splice(i, 1);
-                break;
-            } 
-        }
+        let index = this.returnProjectIndex(projectName);
+        allProjects.splice(index, 1);
     },
 
     addProject(projectName) {
@@ -28,6 +24,19 @@ const modifyProject = {
             modifyTodoModal.addToDropdown(projectName);
             modifyDisplay.clearDisplay();
             modifyDisplay.renderProject(projectName);
+        }
+    },
+
+    addTodoID(projectName, id) {
+        let index = this.returnProjectIndex(projectName);
+        allProjects[index].ids.push(id);
+    },
+
+    returnProjectIndex(projectName) { // Searches the array of allProjects and returns the index
+        for (let i = 0; i < allProjects.length; i++) {
+            if (allProjects[i].title == projectName) {
+                return i;
+            }
         }
     }
 }

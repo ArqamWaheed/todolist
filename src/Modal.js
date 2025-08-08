@@ -30,7 +30,10 @@ const modifyTodoModal = {
                 $projectDropdown.removeChild(child);
             }
         }
-    }
+    },
+    getSelectedProject() {
+        return $projectDropdown.value;
+    },
 }
 
 

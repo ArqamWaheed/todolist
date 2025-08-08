@@ -1,3 +1,5 @@
+import { allProjects, modifyProject } from "./projects";
+
 const $rightSidePanel = document.querySelector(".display"); 
 
 const modifyDisplay = {
@@ -23,6 +25,16 @@ const modifyDisplay = {
         $mainDiv.appendChild($headerDiv);
         $headerDiv.appendChild($h1);
         $headerDiv.appendChild($h2);
+        let index = modifyProject.returnProjectIndex(projectName);
+        if (allProjects[index].ids != null) { // Check if has any ToDos to render;
+            for (todosID in allProjects[index].ids) {
+                this.renderTodo(todosID);
+            }
+        } 
+    },
+
+    renderTodo() {
+
     },
 
     returnActivePage() {
