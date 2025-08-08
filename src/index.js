@@ -8,22 +8,31 @@ import { modifyProject } from "./projects.js";
 const allTodos = [];
 
 function createTodo(title, description, dueDate) {
-    this.title = title
-    this.description = description
-    this.dueDate = dueDate
+    this.title = title;
+    this.description = description;
+    this.dueDate = dueDate;
     this.id = crypto.randomUUID();
 }
 
 
 const modifyTodo = {
     addTodo(TodoName, TodoDesc, dueDate) {
-        const todoObj = createTodo(TodoName, TodoDesc, dueDate);
-        projectName = modifyTodoModal.getSelectedProject();
+        const todoObj = new createTodo(TodoName, TodoDesc, dueDate);
+        let projectName = modifyTodoModal.getSelectedProject();
         allTodos.push(todoObj);
         modifyTodoModal.closeModal();
         modifyProject.addTodoID(projectName, todoObj.id);
+        modifyDisplay.clearDisplay();
         modifyDisplay.renderProject(projectName);
-    }
+    },
+
+    returnTodoIndex(todoID) { // returns VIA todoID;
+        for (let i = 0; i < allTodos.length; i++) {
+            if (allTodos[i].id == todoID) {
+                return i;
+            }
+        }
+    } 
 }
 
-export {allTodos};
+export {allTodos, modifyTodo};

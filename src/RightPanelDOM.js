@@ -1,3 +1,4 @@
+import { allTodos, modifyTodo } from ".";
 import { allProjects, modifyProject } from "./projects";
 
 const $rightSidePanel = document.querySelector(".display"); 
@@ -27,14 +28,38 @@ const modifyDisplay = {
         $headerDiv.appendChild($h2);
         let index = modifyProject.returnProjectIndex(projectName);
         if (allProjects[index].ids != null) { // Check if has any ToDos to render;
-            for (todosID in allProjects[index].ids) {
-                this.renderTodo(todosID);
+            for (let todoID in allProjects[index].ids) {
+                this.renderTodo(allProjects[index].ids[todoID]);
             }
         } 
     },
 
-    renderTodo() {
-
+    renderTodo(todoID) {
+        console.log(todoID);
+        const index = modifyTodo.returnTodoIndex(todoID);
+        const todoName = allTodos[index].title;
+        const todoDesc = allTodos[index].description;
+        const todoDueDate = allTodos[index].dueDate;
+        const $mainDiv = document.createElement("div");
+        $mainDiv.classList.add("displayTodoDiv");
+        const $contentDiv = document.createElement("div");
+        $contentDiv.classList.add("displayTodoContent");
+        const $completedCheckbox = document.createElement("input");
+        $completedCheckbox.type = "checkbox";
+        const $p1 = document.createElement("p"); // Todo name
+        const $p2 = document.createElement("p"); // Todo description
+        const $p3 = document.createElement("p"); // Todo dueDate
+        $p1.textContent = todoName;
+        $p2.textContent = todoDesc;
+        $p3.textContent = todoDueDate;
+        const $hr = document.createElement("hr");
+        $rightSidePanel.querySelector(".displayProjectDiv").appendChild($mainDiv);
+        $mainDiv.appendChild($completedCheckbox);
+        $mainDiv.appendChild($contentDiv);
+        $contentDiv.appendChild($p1);
+        $contentDiv.appendChild($p2);
+        $contentDiv.appendChild($p3);
+        $contentDiv.appendChild($hr);
     },
 
     returnActivePage() {

@@ -1,3 +1,4 @@
+import { modifyTodo } from ".";
 import { $todoModal, modifyTodoModal } from "./Modal";
 
 const $closeButton = $todoModal.querySelector(".close");
@@ -8,5 +9,6 @@ $closeButton.addEventListener('click', function() {
 })
 
 $addTodoBtn.addEventListener('click', function() {
-    
+    const todo = modifyTodoModal.getModalDetails();
+    modifyTodo.addTodo(todo.title, todo.description, todo.dueDate);
 })
