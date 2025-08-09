@@ -48,6 +48,16 @@
             let description = $modalInputDesc.value;
             let dueDate = $modalDueDate.value;
             return {title, description, dueDate};
+        },
+
+        validateModalInput() {
+            const $titleInput = document.querySelector('.modalInputTask');
+            const $descriptionInput = document.querySelector('.modalInputDesc');
+            const $dateInput = document.querySelector("#dueDate");
+            if ($titleInput.value && $descriptionInput.value && $dateInput.value) {
+                return true;
+            }
+            return false;
         }
     }
 

@@ -9,6 +9,11 @@ $closeButton.addEventListener('click', function() {
 })
 
 $addTodoBtn.addEventListener('click', function() {
-    const todo = modifyTodoModal.getModalDetails();
-    modifyTodo.addTodo(todo.title, todo.description, todo.dueDate);
+    if (modifyTodoModal.validateModalInput()) {
+        const todo = modifyTodoModal.getModalDetails();
+        modifyTodo.addTodo(todo.title, todo.description, todo.dueDate);
+    } else {
+        alert("FILL the title, description, and the dueDate!");
+    }
+
 })

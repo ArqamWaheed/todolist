@@ -6,6 +6,8 @@ import { modifyTodoModal } from "./Modal.js";
 import { allProjects, modifyProject } from "./projects.js";
 import "./RightPanelEventListeners.js";
 
+modifyDisplay.renderHomePage();
+
 const allTodos = [];
 
 function createTodo(title, description, dueDate) {
@@ -36,8 +38,6 @@ const modifyTodo = {
         allTodos.splice(allTodos.indexOf(allTodos.ID), 1); // Removes the ID from allTodos
         modifyDisplay.clearDisplay();
         modifyDisplay.renderProject(projectName);   
-        console.log(allProjects);
-        console.log(allTodos);
     },
 
     returnTodoIndex(todoID) { // returns VIA todoID;
