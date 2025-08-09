@@ -1,3 +1,4 @@
+import { modifyTodo } from ".";
 import { projectInput, renderProjectAdd, validateProjectName } from "./LeftPanelDOM";
 import { $projectDropdown, modifyTodoModal } from "./Modal";
 import { modifyDisplay } from "./RightPanelDOM";
@@ -13,6 +14,9 @@ function createProject(title) {
 const modifyProject = {
     deleteProject(projectName) {
         let index = this.returnProjectIndex(projectName);
+        for (const IDs in allProjects[index].ids) {
+            modifyTodo.deleteTodo(IDs);
+        }
         allProjects.splice(index, 1);
     },
 
