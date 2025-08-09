@@ -35,7 +35,6 @@ const modifyDisplay = {
     },
 
     renderTodo(todoID) {
-        console.log(todoID);
         const index = modifyTodo.returnTodoIndex(todoID);
         const todoName = allTodos[index].title;
         const todoDesc = allTodos[index].description;
@@ -45,6 +44,7 @@ const modifyDisplay = {
         const $contentDiv = document.createElement("div");
         $contentDiv.classList.add("displayTodoContent");
         const $completedCheckbox = document.createElement("input");
+        $completedCheckbox.classList.add(todoID);
         $completedCheckbox.type = "checkbox";
         const $p1 = document.createElement("p"); // Todo name
         const $p2 = document.createElement("p"); // Todo description
@@ -77,4 +77,4 @@ const modifyDisplay = {
 
 }
 
-export {modifyDisplay};
+export {modifyDisplay, $rightSidePanel};

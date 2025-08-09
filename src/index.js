@@ -3,7 +3,8 @@ import { modifyDisplay} from "./RightPanelDOM.js";
 import "./LeftPanelEventListeners.js";
 import "./ModalEventListeners.js";
 import { modifyTodoModal } from "./Modal.js";
-import { modifyProject } from "./projects.js";
+import { allProjects, modifyProject } from "./projects.js";
+import "./RightPanelEventListeners.js";
 
 const allTodos = [];
 
@@ -25,6 +26,18 @@ const modifyTodo = {
         modifyProject.addTodoID(projectName, todoObj.id);
         modifyDisplay.clearDisplay();
         modifyDisplay.renderProject(projectName);
+    },
+
+    deleteTodo(todoID) {
+        const ID = this.returnTodoIndex(todoID);
+        const projectName = modifyDisplay.returnActivePage();
+        const projectIndex = modifyProject.returnProjectIndex(projectName);
+        allProjects[projectIndex].ids.splice(allProjects[projectIndex].ids.indexOf(ID), 1); // Removes the ID from allProjects 
+        allTodos.splice(allTodos.indexOf(allTodos.ID), 1); // Removes the ID from allTodos
+        modifyDisplay.clearDisplay();
+        modifyDisplay.renderProject(projectName);   
+        console.log(allProjects);
+        console.log(allTodos);
     },
 
     returnTodoIndex(todoID) { // returns VIA todoID;
