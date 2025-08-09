@@ -21,6 +21,7 @@ const modifyTodo = {
         let projectName = modifyTodoModal.getSelectedProject();
         allTodos.push(todoObj);
         modifyTodoModal.closeModal();
+        modifyTodoModal.resetModal();
         modifyProject.addTodoID(projectName, todoObj.id);
         modifyDisplay.clearDisplay();
         modifyDisplay.renderProject(projectName);

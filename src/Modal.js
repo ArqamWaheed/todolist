@@ -12,7 +12,12 @@
             $todoModal.style.display = "none";
         },
         resetModal() {
-
+            const $modalInput = $todoModal.querySelector("input");
+            const $modalInputDesc = $todoModal.querySelector(".modalInputDesc");
+            const $modalDueDate = $todoModal.querySelector("#dueDate");
+            $modalInput.value = null;
+            $modalInputDesc.value = null;
+            $modalDueDate.value = null;
         },
         setInput() {
             const $modalInput = $todoModal.querySelector("input");
