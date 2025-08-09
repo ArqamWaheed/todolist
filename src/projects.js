@@ -15,7 +15,7 @@ const modifyProject = {
     deleteProject(projectName) {
         let index = this.returnProjectIndex(projectName);
         for (const IDs in allProjects[index].ids) {
-            modifyTodo.deleteTodo(IDs);
+            modifyTodo.popTodo(IDs);
         }
         allProjects.splice(index, 1);
     },
