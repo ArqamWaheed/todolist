@@ -1,5 +1,6 @@
 import { allTodos, modifyTodo } from ".";
 import { allProjects, modifyProject } from "./projects";
+import { formatDistance, format } from "date-fns";
 
 const $rightSidePanel = document.querySelector(".display"); 
 
@@ -51,7 +52,9 @@ const modifyDisplay = {
         const $p3 = document.createElement("p"); // Todo dueDate
         $p1.textContent = todoName;
         $p2.textContent = todoDesc;
-        $p3.textContent = todoDueDate;
+        $p3.textContent = `Due Date ${formatDistance(todoDueDate, new Date(), {
+            addSuffix: true
+          })} | exactly on ${format(todoDueDate, 'MM/dd/yyyy')}`;
         const $hr = document.createElement("hr");
         $rightSidePanel.querySelector(".displayProjectDiv").appendChild($mainDiv);
         $mainDiv.appendChild($completedCheckbox);
