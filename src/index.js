@@ -1,5 +1,3 @@
-const allTodos = [];
-
 import "./styles.css";
 import { modifyDisplay} from "./RightPanelDOM.js";
 import "./LeftPanelEventListeners.js";
@@ -7,9 +5,11 @@ import "./ModalEventListeners.js";
 import { modifyTodoModal } from "./Modal.js";
 import { allProjects, modifyProject } from "./projects.js";
 import "./RightPanelEventListeners.js";
-import "./localStorage.js";
-modifyDisplay.renderHomePage();
+import { initializeStorage, populateStorage } from "./localStorage.js";
 
+const allTodos = [];
+modifyDisplay.renderHomePage();
+initializeStorage(allTodos, allProjects);
 
 function createTodo(title, description, dueDate) {
     this.title = title;
@@ -29,6 +29,7 @@ const modifyTodo = {
         modifyProject.addTodoID(projectName, todoObj.id);
         modifyDisplay.clearDisplay();
         modifyDisplay.renderProject(projectName);
+        populateStorage();
     },
 
     deleteTodo(todoID) {
@@ -38,7 +39,8 @@ const modifyTodo = {
         allProjects[projectIndex].ids.splice(allProjects[projectIndex].ids.indexOf(ID), 1); // Removes the ID from allProjects 
         allTodos.splice(ID, 1); // Removes the ID from allTodos
         modifyDisplay.clearDisplay();
-        modifyDisplay.renderProject(projectName);   
+        modifyDisplay.renderProject(projectName);
+        populateStorage();   
     },
 
     popTodo(todoID) {

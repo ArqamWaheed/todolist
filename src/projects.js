@@ -2,6 +2,7 @@ import { modifyTodo } from ".";
 import { projectInput, renderProjectAdd, validateProjectName } from "./LeftPanelDOM";
 import { $projectDropdown, modifyTodoModal } from "./Modal";
 import { modifyDisplay } from "./RightPanelDOM";
+import { populateStorage } from "./localStorage";
 
 
 
@@ -19,6 +20,7 @@ const modifyProject = {
             modifyTodo.popTodo(IDs);
         }
         allProjects.splice(index, 1);
+        populateStorage();
     },
 
     addProject(projectName) {
@@ -26,6 +28,7 @@ const modifyProject = {
             renderProjectAdd(projectName);
             const projectObject = new createProject(projectName);
             allProjects.push(projectObject);
+            populateStorage();
             projectInput.clearInput();
             modifyTodoModal.addToDropdown(projectName);
             modifyDisplay.clearDisplay();
