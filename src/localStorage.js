@@ -27,8 +27,6 @@ function renderStorage() {
     allProjects.splice(0, allProjects.length, ...storedProjects);
     const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
     allTodos.splice(0, allTodos.length, ...storedTodos);
-    console.log(allProjects);
-    console.log(allTodos);
 }
 
 function renderInitialStorage() {

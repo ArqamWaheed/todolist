@@ -37,15 +37,16 @@ $leftSidePanel.addEventListener('click', function(e) {  // Delete project
 })
 
 
-$projectsPanel.addEventListener('click', function(e) {
-    if (e.target.querySelector("p") != null) { // validate whether there is any p element even, fixes issues with deleting
-        const projectName = e.target.querySelector("p").textContent;
+$projectsPanel.addEventListener('click', function() {
+    const $tempDiv = document.querySelector(".projectDiv");
+    if ($tempDiv.querySelector("p") != null) { // validate whether there is any p element even, fixes issues with deleting
+        const projectName = $tempDiv.querySelector("p").textContent;
         if (modifyDisplay.returnActivePage() != projectName) {
             modifyDisplay.clearDisplay();
             modifyDisplay.renderProject(projectName); 
         }
     }
-})
+});
 
 $homeBtn.addEventListener('click', function() {
     modifyDisplay.clearDisplay();
