@@ -4,6 +4,7 @@ import { $projectDropdown, modifyTodoModal } from "./Modal";
 import { modifyDisplay } from "./RightPanelDOM";
 
 
+
 const allProjects = [];
 
 function createProject(title) {

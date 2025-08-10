@@ -1,3 +1,5 @@
+const allTodos = [];
+
 import "./styles.css";
 import { modifyDisplay} from "./RightPanelDOM.js";
 import "./LeftPanelEventListeners.js";
@@ -5,10 +7,8 @@ import "./ModalEventListeners.js";
 import { modifyTodoModal } from "./Modal.js";
 import { allProjects, modifyProject } from "./projects.js";
 import "./RightPanelEventListeners.js";
-
+import "./localStorage.js";
 modifyDisplay.renderHomePage();
-
-const allTodos = [];
 
 
 function createTodo(title, description, dueDate) {

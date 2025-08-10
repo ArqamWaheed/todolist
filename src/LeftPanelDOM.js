@@ -46,6 +46,9 @@ function validateProjectName(name) { // Validating through className, which is t
     if (name.includes(" ")) {
         alert("Project names cannot contain whitespaces.");
         return false;
+    } else if (name == "") {
+        alert("Cannot have an empty project name!");
+        return false;
     }
     return true; 
 }

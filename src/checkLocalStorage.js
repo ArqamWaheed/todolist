@@ -1,4 +1,4 @@
-function storageAvailable(type) {
+export default function storageAvailable(type) {
     let storage;
     try {
       storage = window[type];
@@ -18,8 +18,3 @@ function storageAvailable(type) {
   }
 
 
-  if (storageAvailable("localStorage")) {
-    // Yippee! We can use localStorage awesomeness
-  } else {
-    // Too bad, no localStorage for us
-  }
